@@ -1,0 +1,87 @@
+<div class="wrapper">
+  <div class="topbar mat-elevation-z6">
+    <mat-toolbar color="primary">
+      <span>Rightful Labs Javascript Task</span>
+    </mat-toolbar>
+  </div>
+  <div class="content">
+    <mat-tab-group>
+      <mat-tab label="String Properties">
+        <div class="string-div">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>String Input</mat-label>
+            <input
+              [(ngModel)]="stringInput"
+              matInput
+              placeholder="Ex. Pizza"
+              value=""
+            />
+          </mat-form-field>
+          <button
+            (click)="stringProperties()"
+            mat-raised-button
+            color="primary"
+          >
+            Properties
+          </button>
+        </div>
+        <div class="json-div" *ngIf="jsonObject1">
+          <div class="functions">
+            <i
+              class="material-icons"
+              matTooltip="Copy to clipboard"
+              (click)="copy(jsonObject1)"
+              >content_copy</i
+            >
+          </div>
+          <code>
+            <pre>{{ jsonObject1 | json }}</pre>
+          </code>
+        </div>
+      </mat-tab>
+      <mat-tab label="Array Compare">
+        <div class="string-div">
+          <h1>Write comma seperated elements-</h1>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Input 1</mat-label>
+            <input
+              [(ngModel)]="stringInput1"
+              matInput
+              placeholder="Ex. Pizza"
+              value=""
+            />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Input 2</mat-label>
+            <input
+              [(ngModel)]="stringInput2"
+              matInput
+              placeholder="Ex. Pizza"
+              value=""
+            />
+          </mat-form-field>
+          <button
+            (click)="compareProperties()"
+            mat-raised-button
+            color="primary"
+          >
+            Compare
+          </button>
+        </div>
+        <div class="json-div" *ngIf="jsonObject2">
+          <div class="functions">
+            <i
+              class="material-icons"
+              matTooltip="Copy to clipboard"
+              (click)="copy(jsonObject2)"
+              >content_copy</i
+            >
+          </div>
+          <code>
+            <pre>{{ jsonObject2 | json }}</pre>
+          </code>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
